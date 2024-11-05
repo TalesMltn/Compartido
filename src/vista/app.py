@@ -40,6 +40,7 @@ class ConversorApp:
             moneda_origen = self.origen_combo.get()
             moneda_destino = self.destino_combo.get()
             resultado = self.conversor.convertir(monto, moneda_origen, moneda_destino)
+            self.resultado_label.config(text=f"Resultado: {resultado:.2f} {moneda_destino}")
         except ValueError as e:
             messagebox.showerror("Error", str(e))
 
